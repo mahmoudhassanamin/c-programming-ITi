@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1667506351 source:e:\iti matrial\c programming\labs\lab 1\proj 4-2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"strprint.h"
+
+1667506265 e:\iti matrial\c programming\labs\lab 1\proj 4-2\strprint.h
+
+1667506703 source:e:\iti matrial\c programming\labs\lab 1\proj 4-2\strprint.c
+	<stdio.h>
+	<stdlib.h>
+

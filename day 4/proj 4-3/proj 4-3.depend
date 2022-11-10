@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1667508626 source:e:\iti matrial\c programming\labs\lab 1\day 4\proj 4-3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1667509234 source:e:\iti matrial\c programming\labs\lab 1\day 4\proj 4-3\checkchar.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1667504599 source:e:\iti matrial\c programming\labs\lab 1\day 4\proj4-0\swap.c
+	<stdio.h>
+
+1667504697 source:e:\iti matrial\c programming\labs\lab 1\day 4\proj4-0\main.c
+	<stdio.h>
+	<stdlib.h>
+	"swap.h"
+
+1667504465 e:\iti matrial\c programming\labs\lab 1\day 4\proj4-0\swap.h
+

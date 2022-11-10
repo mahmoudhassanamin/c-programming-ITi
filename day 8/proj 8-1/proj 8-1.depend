@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1667928223 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"array.h"
+
+1667928208 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-1\array.c
+
+1667928047 e:\iti matrial\c programming\labs\projects\day 8\proj 8-1\array.h
+

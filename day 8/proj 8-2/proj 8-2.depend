@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1667931863 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"emp_menu.h"
+
+1667931709 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-2\emp_menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1667931815 e:\iti matrial\c programming\labs\projects\day 8\proj 8-2\emp_menu.h
+
