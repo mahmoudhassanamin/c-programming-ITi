@@ -50,7 +50,7 @@ void backspace(char **text,int cols ,int rows){
     char temp=' ';
     int k=i,m=j;
 
-    while( m<=rows-1 && k!=cols ){
+    while( m != rows && k != cols-1 ){
         if(text[m][k+1]== '\0'){
             temp=' ';
             text[m][k]=text[m+1][0];
@@ -67,6 +67,7 @@ void backspace(char **text,int cols ,int rows){
         }
 
     }
+
 
 }
 

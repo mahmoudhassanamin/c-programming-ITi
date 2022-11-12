@@ -52,6 +52,10 @@ int main()
         else if(press == 8 && i>0){
             i--;
             backspace(text,cols,rows);
+            if(i==0 && j>0){
+                i=cols-1;
+                j--;
+            }
         }
         else if(press == 13 && j<rows){
                 j++;
