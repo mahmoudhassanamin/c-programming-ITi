@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-extern int y,x,i;
+extern int i,j;
 void textattr(int ForgC)
 {
     //system("COLOR ForgC"); //system("COLOR FC");
@@ -15,49 +15,70 @@ void gotoxy(int x,int y)
     coord.Y=y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
 }
-void move(char event,int size){
-    if(event== 75 && x>20){
-    x--;
-    i--;
+void move(char event,int cols ,int rows){
+    if(event== 75){
+        if(i>0 && j>=0){
+            i--;
+        }
+
+        else if (i==0&& j!=0) {
+            i=cols-1;
+            j--;
+        }
     }
-    else if(event== 77 &&i<size){
-    x++;
-    i++;
+    else if(event== 77 && j<rows){
+        if(i<cols-1){
+            i++;
+        }
+        else if (i==cols-1 && j<rows){
+            i=0;
+            j++;
+        }
     }
+    else if (event==72 && j>0){
+        j--;
+    }
+    else if (event==80 && j<rows){
+        j++;
+    }
+
 }
 void edit (char *text,char event){
      *text=event;
-
-
 }
-void backspace(char *text){
+void backspace(char **text,int cols ,int rows){
     char temp=' ';
-    int j=0;
-    while(*(text+j+1)!='\0'){
-     temp=' ';
-     *(text+j)=*(text+j+1);
-     *(text+j+1)=temp;
-     j++;
+    int k=i,m=j;
+
+    while( m<=rows-1 && k!=cols ){
+        if(text[m][k+1]== '\0'){
+            temp=' ';
+            text[m][k]=text[m+1][0];
+            text[m+1][0]=temp;
+            k=0;
+            m++;
+
+        }
+        else{
+            temp=' ';
+            text[m][k]=text[m][k+1];
+            text[m][k+1]=temp;
+            k++;
+        }
+
     }
 
 }
-void delet(char *text){
-    char temp=' ';
-    int j=0;
-    while(*(text+j+1)!='\0'){
-     temp=' ';
-     *(text+j)=*(text+j+1);
-     *(text+j+1)=temp;
-     j++;
-    }
 
-}
+
 void print (char **text,int rows){
-    gotoxy(x,y);
-    for (i=0;i<rows;i++){
-        printf("%s",text[i]);
+    int k=0;
+    for (k=0;k<rows;k++){
+        gotoxy(20,(20+k));
+        textattr(240);
+        printf("%s",text[k]);
+        textattr(15);
     }
-    y++;
-
 }
+
 

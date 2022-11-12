@@ -1,6 +1,14 @@
 # depslib dependency file v1.0
-1668270687 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-6\texteditor.c
+1668289732 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-6\texteditor.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
+
+1668289418 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"texteditor.h"
+
+1668288666 e:\iti matrial\c programming\labs\projects\day 8\proj 8-6\texteditor.h
 

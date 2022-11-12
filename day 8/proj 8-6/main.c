@@ -9,32 +9,27 @@ int y=20 ,x=20,i=0,j=0;
 int main()
 {
     char **text,press=0;
-    short int rows =0,cols=0;
+    int rows =0,cols=0;
     printf("set multi line editor \nenter how many lines of editing area : ");
     scanf("%d",&rows);
     text=(char **) malloc (rows * sizeof(char));
     printf("enter width of editing area : ");
     scanf("%d",&cols);
     for (i=0; i<rows ;i++){
-        *text=(char *) malloc((cols+1)*sizeof(char)); // cols (+1) to add '\0' charecter
+        text[i]=(char *) malloc((cols+1)*sizeof(char)); // cols (+1) to add '\0' charecter
          for(j=0;j<cols;j++){
              text[i][j]=' ';
          }
-         text[i][cols]='\0';
+         text[i][j]='\0';
     }
 
-    system("cls"); // print el lines kolha
-    textattr(240);
-    print(text,rows);
-    textattr(15);
     i=0;
     j=0;
 
     while(press != 27){
-        if(i>=length || i>=length*(width-1) || i>=length*(width-1) || i>=length*(width) ){
-
-        }
-        gotoxy(x,y);
+        system("cls");
+        print(text,rows);
+        gotoxy((x+i),(y+j));
         press=getch();
         if(press==-32){
             press=getch();
@@ -43,54 +38,44 @@ int main()
                 case 77:
                 case 72:
                 case 80:
-                    move(press,length);
-                    break;
-                case 83:
-                    delet(text[j]+i+1);
-                    system("cls");
-                    gotoxy(20,20);
-                    textattr(240);
-                    printf("%s ",text);
-                    textattr(15);
+                    move(press,cols,rows);
                     break;
                 case 71:
                     x=20;
                     i=0;
-                    gotoxy(x,y);
+                    gotoxy(x,y+j);
                     break;
 
             }
         }
 
-        else if(press == 8 && x>20){
+        else if(press == 8 && i>0){
             i--;
-            x--;
-            backspace(text+i);
-            system("cls");
-            gotoxy(20,20);
-            textattr(240);
-            printf("%s ",text);
-            textattr(15);
-
+            backspace(text,cols,rows);
         }
-        else if(press!=8&& press !=13 && i<length){
-            edit(text+i,press);
+        else if(press == 13 && j<rows){
+                j++;
+                i=0;
+        }
+        else if(j<rows && i<cols){
+            edit(text[j]+i,press);
             i++;
-            x++;
-            system("cls");
-            gotoxy(20,20);
-            textattr(240);
-            printf("%s ",text);
-            textattr(15);
-        }
-        else if(press ==13 ){
+            if(i==cols){
+                i=0;
+                j++;
+            }
 
         }
+
 
     }
 
-         gotoxy(20,30);
-         printf("%s\n\n",text);
+         for (i=0;i<rows;i++){
+            gotoxy(x,y+rows+5+i);
+            printf("%s",text[i]);
+
+         }
+         printf("\n\n\n");
 
 
 
