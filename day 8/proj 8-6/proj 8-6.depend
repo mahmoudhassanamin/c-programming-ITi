@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1668270687 source:e:\iti matrial\c programming\labs\projects\day 8\proj 8-6\texteditor.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
