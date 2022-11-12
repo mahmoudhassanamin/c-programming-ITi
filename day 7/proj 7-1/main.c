@@ -48,7 +48,7 @@ int main()
             textattr(15);
 
         }
-        else if(press!=8&& press !=13 && x<(size+20)){
+        else if(press!=8&& press !=13 && i<size){
 
             edit(&text[i],press);
             i++;
