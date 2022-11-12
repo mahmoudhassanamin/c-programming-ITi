@@ -9,8 +9,14 @@
 int main()
 {
     char text[size]={'\0'},press=0;
+    for(i=0;i<size-1;i++){
+        text[i]=' ';
+    }
+    i=0;
     gotoxy(x,y);
-    color (i,size);
+    textattr(240);
+    printf("%s ",text);
+    textattr(15);
     while(press !=13){
 
         gotoxy(x,y);
@@ -38,8 +44,8 @@ int main()
             system("cls");
             gotoxy(20,20);
             textattr(240);
-            print(text);
-            color (i,size);
+            printf("%s",text);
+            textattr(15);
 
         }
         else if(press!=8&& press !=13 && x<(size+20)){
@@ -50,15 +56,15 @@ int main()
             system("cls");
             gotoxy(20,20);
             textattr(240);
-            print(text);
-            color (i,size);
-
+            printf("%s",text);
+            textattr(15);
         }
 
     }
 
          gotoxy(20,30);
-         print(text);
+         printf("%s\n\n",text);
+
 
 
     return 0;

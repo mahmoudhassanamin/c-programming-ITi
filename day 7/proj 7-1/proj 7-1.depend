@@ -12,15 +12,15 @@
 	<dir.h>
 	<time.h>
 
-1667851374 source:e:\iti matrial\c programming\labs\projects\day 7\proj 7-1\main.c
+1668234705 source:e:\iti matrial\c programming\labs\projects\day 7\proj 7-1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	"texteditor.h"
 
-1667851030 e:\iti matrial\c programming\labs\projects\day 7\proj 7-1\texteditor.h
+1668234717 e:\iti matrial\c programming\labs\projects\day 7\proj 7-1\texteditor.h
 
-1667851090 source:e:\iti matrial\c programming\labs\projects\day 7\proj 7-1\texteditor.c
+1668234683 source:e:\iti matrial\c programming\labs\projects\day 7\proj 7-1\texteditor.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>

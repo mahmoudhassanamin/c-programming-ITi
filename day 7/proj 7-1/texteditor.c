@@ -31,25 +31,15 @@ void edit (char *text,char event){
 
 }
 void delet(char *text){
-
+    char temp=' ';
     int j=0;
-    while(*(text+j)!='\0'){
+    while(*(text+j+1)!='\0'){
+     temp=' ';
      *(text+j)=*(text+j+1);
+     *(text+j+1)=temp;
      j++;
     }
 
 }
-void color (int i,int size){
-        for(;i<=size;i++){
-        textattr(240);
-        printf(" ");
-        }
-        textattr(15);
-}
-void print (char * text){
-    int j=0;
-    for(j=0;j<i;j++){
-            printf("%c",text[j]);
-        }
 
-}
+
