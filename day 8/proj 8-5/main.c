@@ -1,25 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-int sum (int degree);
+#define size 20
 int main()
 {
-   int rows=0,cols=0, ** ptr,i=0,j=0,flag=1,c=0;
+   int rows=0, ** ptr,i=0,j=0,flag=1,c=0;
    float result=0;
    char press=0;
-   printf("enter number of students");
+   printf("enter number of students : ");
    scanf("%d",&rows);
+   int cols[20]={0};
    ptr=(int **) malloc (rows*sizeof(int));
-   printf("enter number of subjects");
-   scanf("%d",&cols);
-   cols++; // to add student's number column
-   for (i=0;i<cols;i++){
-        ptr[i]=(int *) malloc (sizeof(int));
+   // to add student's number column
+   for (i=0;i<rows;i++){
+        printf("enter number of subjects for student %d : ",i+1);
+        scanf("%d",&cols[i]);
+        if(cols[i]<=20){
+            cols[i]++;
+            ptr[i]=(int *) malloc (cols[i]*sizeof(int));
+        }
+        else{
+            printf("number of columns must be less than 20\n");
+            i--;
+        }
+
    }
    system("cls");
    for(i=0;i<rows;i++){
         printf("enter student %d number",i+1);
-        scanf("%d",ptr[i]+0);
-        for(j=1;j<cols;j++){
+        scanf("%d",ptr[i]);
+        for(j=1;j<cols[i];j++){
             printf("enter degree of subject %d : ",j);
             scanf("%d",ptr[i]+j);
         }
@@ -52,7 +61,7 @@ int main()
                     break; //enter number out of range
                 }
                 else {
-                    for(j=1;j<cols;j++){
+                    for(j=1;j<cols[i];j++){
                         result+=ptr[i][j];
 
                     }
@@ -64,20 +73,21 @@ int main()
                 break;
          case 71:
          case 103:
-               system("cls");
-               printf("enter subject number :");
-               scanf("%d",&c);
-               if(c>=1&&c<=cols){
-                    result=0;
-                    for(j=0;j<rows;j++){
-                           result+=ptr[j][c];
-                        }
-                        result /=rows;
-                        printf("the Average of subject %d = %.2f ",c,result);
-                        printf("\n-if you want to calculate to another subject press any key \n-to finish press esc");
-                        press=getch();
-                    break;
+                system("cls");
+                printf("enter subject number :");
+                scanf("%d",&c);
+                result=0;
+                for(j=0;j<rows;j++){
+                   if(c<=(cols[j]-1)){
+                        result+=ptr[j][c];
+                        i++;
+                   }
                 }
+                result /=i;
+                printf("the Average of subject %d = %.2f ",c,result);
+                printf("\n-if you want to calculate to another subject press any key \n-to finish press esc");
+                press=getch();
+                break;
             default :
                 printf("out of range");
                 printf("\n-if you want to calculate to another subject press any key \n-to finish press esc");
@@ -87,3 +97,5 @@ int main()
    }
 
 }
+
+
