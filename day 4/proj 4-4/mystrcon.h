@@ -1,4 +1,4 @@
 #ifndef strcon_h
 #define strcon_h
-void strcon(char *str1,char *str2);
+void concat (char *s1 ,char *s2 ,int l);
 #endif // strcon
