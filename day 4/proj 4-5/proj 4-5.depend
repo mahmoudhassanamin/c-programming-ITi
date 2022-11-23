@@ -5,9 +5,12 @@
 	<string.h>
 	<windows.h>
 
-1667565102 source:e:\iti matrial\c programming\labs\projects\day 4\proj 4-5\main.c
+1669238401 source:e:\iti matrial\c programming\labs\projects\day 4\proj 4-5\main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	<windows.h>
+	"freqfun.h"
+
+1669238401 source:e:\iti matrial\c programming\labs\projects\day 4\proj 4-5\freqfun.c
+
+1669238401 e:\iti matrial\c programming\labs\projects\day 4\proj 4-5\freqfun.h
 
